@@ -14,12 +14,7 @@
 
 /**/
 
-#myElement {
-  background: silver;
-  height: 300px;
-  text-align: center;
-  font: 30px/300px Helvetica, Arial, sans-serif;
-}
+
 
 .dropdown {
   margin: 10px;
@@ -59,14 +54,14 @@
   z-index: 1
 }
 
-.list {
+#list {
   display: block;
   height: auto;
   max-width: 100%;
   margin: auto;
 }
 
-.list img {
+#list img {
   width: 350px;
   height: 350px;
   border: 2px solid;

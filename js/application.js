@@ -71,7 +71,7 @@ function callback(results, status, pagination) {                         //funct
 
     populatePhotos(function(photo){               // ADD IF STATEMENT
       hasLoadedFirstImage = true;
-      if ($('.list').children().length == 0){
+      if ($('#list').children().length == 0){
         loadImage(photo);
       }
       if (pagination.hasNextPage){ 
@@ -103,7 +103,7 @@ function createMarker(place) {
 var priceRangeSelect = function (e) {
   e.preventDefault();
   minPriceLevel = $(this).val();
-  $('.list').children().remove();
+  $('#list').children().remove();
   photos = [];
   nearbyPlaces = [];
   initiate_geolocation(); 
@@ -114,7 +114,7 @@ function loadImage(photo) {
   var elem = $('<div><img src="' + photo.url + '"/></div>');
   $("body").data("current-image-url", photo.url);
   $("body").data("current-image-address", photo.address);
-  $('.list').html(elem);  // jquery sets elem variable to html image placeholder
+  $('#list').html(elem);  // jquery sets elem variable to html image placeholder
 };
 
 function shuffle(o){ //v1.0
@@ -179,40 +179,43 @@ function populatePhotos(success, error) {
 
 $(document).ready(function() {
 
-  var myElement = document.getElementById('myElement');
+  var element = document.getElementById('list');
+  var movepic = new Hammer(element);
 
-// create a simple instance
-// by default, it only adds horizontal recognizers
-var mc = new Hammer(myElement);
+  // movepic.on("swip", function(ev) {
+  // });
 
-// listen to events...
-mc.on("panleft panright tap press", function(ev) {
-    myElement.textContent = ev.type +" gesture detected.";
-});
-  
+//     var myElement = document.getElementById('myElement');
+
+// // create a simple instance
+// // by default, it only adds horizontal recognizers
+// var mc = new Hammer(myElement);
+
+// // listen to events...
+// mc.on("panleft panright tap press", function(ev) {
+//     myElement.textContent = ev.type +" gesture detected.";
+// });
+
+
   $('#price-select').on('change', priceRangeSelect);  
   // bind a click event to clicking on the #goodfood button
 
-  $(".btn-success").on('click', function () {                                              // sets click function on the picture. 
+  // $(".btn-success").on('click', function () {                                              // sets click function on the picture. 
+  //   url = $("body").data("current-image-url");
+  //   addresses = ($("body").data("current-image-address"));
+  //   goodfood.push({url : url, addresses : addresses});
+
+  movepic.on('swiperight', function (ev) {                                              // sets click function on the picture. 
     url = $("body").data("current-image-url");
     addresses = ($("body").data("current-image-address"));
     goodfood.push({url : url, addresses : addresses});
-
-
   
           //add your other targets here
      
-// <script type="text/javascript">
-//   var element = document.getElementById("current-image-url");
-//   Hammer(element).on("drag", function(event) {
-//     alert("drag");
-//   });
-// </script>
-
     if (goodfood.length == 4) {
       $( "button" ).remove();
       $( ".instruction" ).remove();
-      $( ".list" ).remove();
+      $( "#list" ).remove();
       $.each(goodfood, function( index, value ) {
       var elem = $('<li><img data-addresses="' + value.addresses + '" src="' + value.url + '"/></li>');
       
@@ -232,11 +235,18 @@ mc.on("panleft panright tap press", function(ev) {
     getNextImage();                                                     // after click gets next nearby place
   });
 
-  $(".btn-danger").on('click', function () {                                              // sets click function on the picture. 
+  movepic.on('swipeleft ', function (ev) {  
     url = $("body").data("current-image-url");
     badfood.push(url);
     getNextImage();                                                     // after click gets next nearby place
   });
+
+  // $(".btn-danger").on('click', function () {                                              // sets click function on the picture. 
+  //   url = $("body").data("current-image-url");
+  //   badfood.push(url);
+  //   getNextImage();                                                     // after click gets next nearby place
+  // });
+
 
   $(".btn-warning").on('click', function () {                                              // sets click function on the picture. 
     url = $("body").data("current-image-url");
