@@ -196,6 +196,33 @@ $(document).ready(function() {
 //     myElement.textContent = ev.type +" gesture detected.";
 // });
 
+// ====================================COREY - ANIMATION====================================
+
+  // var original_mousex = 0;
+  // var mouse_posx = 0;
+
+  // $('#list').on('mousedown', function(event){
+
+  //   console.log(event.clientX);
+  //   original_mousex = event.clientX;
+
+  // });
+
+  // $('#list').on('mousemove', function(event){
+
+  //     console.log(event.clientX - original_mousex);
+  //     if(original_mousex > 0)
+  //       $('#list img').css('padding-left', (event.clientX - original_mousex)+'px');
+  // });
+
+  // $('#list').on('mouseup', function(event){
+
+  //   console.log(event.clientX);
+  //   original_mousex = event.clientX;
+
+  // });
+
+// ====================================COREY - ANIMATION====================================
 
   $('#price-select').on('change', priceRangeSelect);  
   // bind a click event to clicking on the #goodfood button
@@ -209,7 +236,7 @@ $(document).ready(function() {
     url = $("body").data("current-image-url");
     addresses = ($("body").data("current-image-address"));
     goodfood.push({url : url, addresses : addresses});
-  
+
           //add your other targets here
      
     if (goodfood.length == 4) {
@@ -222,8 +249,8 @@ $(document).ready(function() {
       
 
       $( ".goodfood-container #favorites" ).append(elem);
-      $( ".goodfood-container #favorites" ).css("display","inline");
-      $( "#after-instruction" ).show();
+      $( ".goodfood-container #favorites" ).css("display","block");
+      $( ".after-instruction" ).show();
    
       });
 
