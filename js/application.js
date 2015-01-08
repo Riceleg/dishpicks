@@ -227,12 +227,16 @@ $(document).ready(function() {
   $('#price-select').on('change', priceRangeSelect);  
   // bind a click event to clicking on the #goodfood button
 
-  // $(".btn-success").on('click', function () {                                              // sets click function on the picture. 
-  //   url = $("body").data("current-image-url");
-  //   addresses = ($("body").data("current-image-address"));
-  //   goodfood.push({url : url, addresses : addresses});
+    //   $(".btn-success").on('click', function () {                                              // sets click function on the picture. 
+    // url = $("body").data("current-image-url");
+    // addresses = ($("body").data("current-image-address"));
+    // goodfood.push({url : url, addresses : addresses});
+    //  });
 
   movepic.on('swiperight', function (ev) {                                              // sets click function on the picture. 
+    // var elementToDrag = event.target;
+    // elementToDrag.style.left = event.gesture.deltaX + 'px';
+
     url = $("body").data("current-image-url");
     addresses = ($("body").data("current-image-address"));
     goodfood.push({url : url, addresses : addresses});
@@ -268,11 +272,11 @@ $(document).ready(function() {
     getNextImage();                                                     // after click gets next nearby place
   });
 
-  // $(".btn-danger").on('click', function () {                                              // sets click function on the picture. 
-  //   url = $("body").data("current-image-url");
-  //   badfood.push(url);
-  //   getNextImage();                                                     // after click gets next nearby place
-  // });
+  $(".btn-danger").on('click', function () {                                              // sets click function on the picture. 
+    url = $("body").data("current-image-url");
+    badfood.push(url);
+    getNextImage();                                                     // after click gets next nearby place
+  });
 
 
   $(".btn-warning").on('click', function () {                                              // sets click function on the picture. 
