@@ -14,8 +14,6 @@
 
 /**/
 
-
-
 .dropdown {
   margin: 10px;
   border: 1px solid;
@@ -28,10 +26,23 @@
   left: 0;
   text-align: center;
   margin: auto;
+  font-family: "Courier New"; 
 }
 
 .container {
   height: 100%;
+/*       background: url(collage1.jpg);
+     background-repeat:no-repeat;
+display: compact;*/
+
+/*background-image: url("tumblr_inline_mx01idI4L21rm1gfu.gif");
+background-image: url("collage1.jpg");
+*/
+}
+
+.collage {
+    background: url(collage1.jpg);
+    background-size: 10% 20%;
 }
 
 #avatar-icon-container {
@@ -68,8 +79,16 @@
   border-radius: 20px;
 }
 
+.instruction span{
+  background-color: black;
+  margin-left: 100px;
+  color: white;
+  font-family: "Courier New";
+}
+
 #after-instruction {
   display: none;
+  background-color: black;
 }
 
 #favorites {
