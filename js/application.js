@@ -103,7 +103,7 @@ function createMarker(place) {
 var priceRangeSelect = function (e) {
   e.preventDefault();
   minPriceLevel = $(this).val();
-  $('#list').children().remove();
+  // $('#list').children().remove();
   photos = [];
   nearbyPlaces = [];
   initiate_geolocation(); 
