@@ -20,6 +20,12 @@
   height: 30px;
 }
 
+@media (max-width: 600px) {
+  .navbar-brand {
+    display: none;
+  }
+}
+
 .navbar-brand{
   position: absolute;
   width: 100%;
@@ -28,6 +34,9 @@
   margin: auto;
   font-family: "Courier New"; 
 }
+
+
+
 
 .container {
   height: 100%;
