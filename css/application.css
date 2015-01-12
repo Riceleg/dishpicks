@@ -14,17 +14,16 @@
 
 /**/
 
-#myElement {
-  background: silver;
-  height: 300px;
-  text-align: center;
-  font: 30px/300px Helvetica, Arial, sans-serif;
-}
-
 .dropdown {
   margin: 10px;
   border: 1px solid;
   height: 30px;
+}
+
+@media (max-width: 600px) {
+  .navbar-brand {
+    display: none;
+  }
 }
 
 .navbar-brand{
@@ -33,10 +32,26 @@
   left: 0;
   text-align: center;
   margin: auto;
+  font-family: "Courier New"; 
 }
+
+
+
 
 .container {
   height: 100%;
+/*       background: url(collage1.jpg);
+     background-repeat:no-repeat;
+display: compact;*/
+
+/*background-image: url("tumblr_inline_mx01idI4L21rm1gfu.gif");
+background-image: url("collage1.jpg");
+*/
+}
+
+.collage {
+    background: url(collage1.png);
+    background-size: 10% 20%;
 }
 
 #avatar-icon-container {
@@ -56,34 +71,55 @@
 }
 
 .button {
-  z-index: 1
+  z-index: 100
 }
 
-.list {
+#list {
   display: block;
   height: auto;
   max-width: 100%;
   margin: auto;
 }
 
-.list img {
+#list img {
   width: 350px;
   height: 350px;
   border: 2px solid;
   border-radius: 20px;
 }
 
-#after-instruction {
+.after-instruction {
   display: none;
+  text-align: center;
+  z-index: 1
 }
+
+.instruction span, 
+.after-instruction span{
+  background-color: black;
+  color: white;
+  font-family: "Courier New";
+  padding: 5px;
+}
+
+/*.goodfood-container {
+   width: 480px;
+  height: 350px;
+  margin-top: 100px;
+}*/
 
 #favorites {
   display: none;
-  width: 480px;
+  width: 350px;
   height: 350px;
   margin: auto;
-  position: absolute;
-  top: 0; left: 0; bottom: 0; right: 0;
+  padding-left:0;
+  /*position: absolute;*/
+  /*padding-top: 100px; 
+  */
+  /*left: 0; 
+  bottom: 0; 
+  right: 0;*/
 }
 
 #favorites li {
@@ -99,3 +135,6 @@
   width: 150px;
   height: 150px;
 }
+
+
+

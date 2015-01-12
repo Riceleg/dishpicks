@@ -9,13 +9,15 @@
 
 
     <!-- Custom JS -->
+
+          <link rel="stylesheet" type="text/css" href="css/jTinder.css">
   <script src="js/application.js"></script>
   <script src="js/bootstrap.js"></script>
   <script src="js/underscore.js"></script>
 
   <!-- JS Hammertime library -->
-  <script src="js/hammer.min.js" type = "text/javascript"></script>
-  <script src="https://hammerjs.github.io/dist/hammer.js"></script>
+  <!-- <script src="js/hammer.min.js"></script> --><!-- 
+  <script src="https://hammerjs.github.io/dist/hammer.js"></script> -->
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/application.css">
@@ -25,10 +27,12 @@
   <!-- Favicon -->
   <!-- <link rel="icon" href="favicon.ico" type="image/favicon.ico"> -->
 
+
   </head>
   <body>
     
     <div class = "container">
+      <div class = "collage">
 
         <div class = "navbar navbar-default navbar-static-top span12">
 
@@ -37,7 +41,7 @@
           </div>
 
           <div class="navbar-header">
-             <a href="/" class="navbar-brand"></a>               
+             <a href="/" class="navbar-brand">Tinder for food</a>               
                <button class="navbar-toggle" data-toggle="collapse" data-target = ".navHeaderCollapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -58,49 +62,92 @@
           </div>
         </div>
           
-      <div class="row text-center instruction">Choose 4 dishes then go eat 1</div>
+      <div class="row text-center instruction"><span>Choose 4 dishes then go eat 1</span></div>
 
-      <div class="row text-center">
-        <h5 id = "after-instruction"> Take me to your eater</h5>
-      </div>
+      <div class="row text-center after-instruction"><span>Click fav pic for map to eat!</span></div>
 
       <div class="row">&nbsp;</div>
 
-      <div class = "row text-center">           
-        <div class="list"></div>
+      <div class = "row text-center">  
 
-<!--         <script type="text/javascript">
-        var element = document.getElementById("list");
-        Hammer(element).on("drag", function(event) {
-        alert("drag");
-        });
-        </script> -->
+        <div class = "wrap">
 
+              <div id="tinderslide">
+                  <ul>
+<!--                       <li class="pane1">
+                        <div class="img"></div>
+                        <div>swipe</div>
+                        <div class="like"></div>
+                        <div class="dislike"></div>
+                      </li> -->
+<!--                       <li class="pane2"><div class="img"></div><div>swipe</div><div class="like"></div><div class="dislike"></div></li>
+                      <li class="pane3"><div class="img"></div><div>swipe</div><div class="like"></div><div class="dislike"></div></li>
+                      <li class="pane4"><div class="img"></div><div>swipe</div><div class="like"></div><div class="dislike"></div></li>
+                      <li class="pane5"><div class="img"></div><div>swipe</div><div class="like"></div><div class="dislike"></div></li> -->
+                  </ul>
+              </div>
+
+              <div class= "goodfood-container">
+                <ul id = "favorites"></ul>
+              </div>
+            </div>
+
+
+
+        
+        <!-- <div id="list"></div> -->
+
+<!--         <div class= "goodfood-container">
+          <ul id = "favorites"></ul>
+        </div> -->
 
         <div id="hidden-thing"></div>
+
+        
+
       </div>
 
-      <div class = "row">
+     <!--  <div class = "row">
       <div id="myElement"></div>
-      </div>
+      </div> -->
 
-      <div class = "row">
-        <div class= "goodfood-container">
-          <ul id = "favorites">
-          </ul>
-        </div>
-      </div>
+
+
+
 
       <div class="row">&nbsp;</div>
-
+<!-- 
           <div class = "row">
           <div class="col-xs-12 col-xs-offset-5">
             <button type="button" class="btn btn-success btn-responsive">Yes</button>
             <button type="button" class="btn btn-warning btn-responsive">N/A</button>
             <button type="button" class="btn btn-danger btn-responsive">No</button>
           </div>
+      </div> -->
+
+      <div class="row">&nbsp;</div>
+      <div class="row">&nbsp;</div> 
+      <div class="row">&nbsp;</div>
+      <div class="row">&nbsp;</div> 
+
       </div>
 
   </div>
+
+          <!-- jQuery lib --><!-- 
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+ -->
+        <!-- transform2d lib -->
+        <script type="text/javascript" src="js/jquery.transform2d.js"></script>
+
+        <!-- hammer lib -->
+        <script type="text/javascript" src="js/hammer.min.js"></script>
+
+        <!-- jTinder lib -->
+        <script type="text/javascript" src="js/jquery.jTinder.js"></script>
+
+        <!-- jTinder initialization script -->
+        <!-- <script>$("#tinderslide").jTinder();</script> -->
+
 </body>
 </html>
